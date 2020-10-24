@@ -63,9 +63,10 @@ function gameTracker() {
   let diag = [0, 0];
   rowSum(rows);
   colSum(cols);
+  diagSum(diag);
   checkForWinner(rows);
   checkForWinner(cols);
-  console.log(lastChoice.length);
+  console.log(diag);
 }
 
 function rowReducer(total, val) {
@@ -80,6 +81,27 @@ function colReducer(col) {
     }
   }
   return sum;
+}
+
+function diagReducer1(diag) {
+  let sum1 = 0;
+  sum1 += selections[0][0];
+  sum1 += selections[1][1];
+  sum1 += selections[2][2];
+  return sum1;
+}
+
+function diagReducer2(diag) {
+  let sum2 = 0;
+  sum2 += selections[0][2];
+  sum2 += selections[1][1];
+  sum2 += selections[2][0];
+  return sum2;
+}
+
+function diagSum(array) {
+  array[0] = diagReducer1(array);
+  array[1] = diagReducer2(array);
 }
 
 function rowSum(array) {
