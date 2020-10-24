@@ -3,12 +3,19 @@
 * {
   font-family: 'Gochi Hand', cursive;
   margin: 0;
+  text-align: center;
 }
 
 h1, h2 {
   font-size: 4em;
   margin-top: 50px;
-  text-align: center;
+}
+
+.game-section {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
 }
 
 .gameboard {
@@ -19,7 +26,7 @@ h1, h2 {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   height: 500px;
-  margin: 50px auto;
+  margin: 0 30px;
   width: 500px;
 }
 
@@ -29,4 +36,20 @@ h1, h2 {
   display: flex;
   font-size: 8em;
   justify-content: center;
+}
+
+.player1 {
+  font-size: 1.5em;
+  transform: rotate(-10deg);
+}
+
+.player2 {
+  font-size: 1.5em;
+  transform: rotate(10deg);
+  visibility: hidden;
+}
+
+h4 {
+  font-size: 2em;
+  text-decoration: underline;
 }
