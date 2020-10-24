@@ -13,8 +13,8 @@ We will be making a Tic Tac Toe game using all of these concepts.
 
 ## Getting Started
 
-* Fork and clone this repository.
-* Before you even start working with JavaScript, construct the gameboard. The gameboard page should include the 3x3 grid (of divs). Using `id` and `class` on clickable elements will help you wire this up in JavaScript afterwards.
+* Fork and clone this repository. - DONE
+* Before you even start working with JavaScript, construct the gameboard. The gameboard page should include the 3x3 grid (of divs). Using `id` and `class` on clickable elements will help you wire this up in JavaScript afterwards. - DONE
 * The JavaScript portion will be next
   * Select elements and attach functions via event listeners
   * You will also need a variable to keep track of moves. This will be used to indicate whether or not to draw an `X` or an `O`
