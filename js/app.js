@@ -21,6 +21,7 @@ twoOne.addEventListener("click", addHtml);
 twoTwo.addEventListener("click", addHtml);
 
 //variables
+const winner = false;
 const lastChoice = [];
 const selections = [
   [null, null, null],
@@ -37,7 +38,7 @@ function addHtml() {
   } else {
     oTurn(this);
   }
-  checkForWinner();
+  gameTracker();
 }
 
 function xTurn(ele) {
@@ -56,22 +57,62 @@ function oTurn(ele) {
   selections[ele.dataset.row][ele.dataset.col] = -1;
 }
 
-function checkForWinner() {
+function gameTracker() {
   let rows = [0, 0, 0];
-  rows[0] = selections[0].reduce(reducer);
-  rows[1] = selections[1].reduce(reducer);
-  rows[2] = selections[2].reduce(reducer);
-  rows.forEach((i) => {
-      if (i === 3 || i === -3) {
-          console.log("Winner!!!!!");
-      }
-  })
-
-  }
-
-
-
-function reducer(total, val) {
-    return total + val;
+  let cols = [0, 0, 0];
+  let diag = [0, 0];
+  rowSum(rows);
+  colSum(cols);
+  checkForWinner(rows);
+  checkForWinner(cols);
+  console.log(lastChoice.length);
 }
 
+function rowReducer(total, val) {
+  return total + val;
+}
+
+function colReducer(col) {
+  let sum = 0;
+  for (let i = 0; i < selections.length; i++) {
+    for (let j = col; j < col + 1; j++) {
+      sum += selections[i][j];
+    }
+  }
+  return sum;
+}
+
+function rowSum(array) {
+  array[0] = selections[0].reduce(rowReducer);
+  array[1] = selections[1].reduce(rowReducer);
+  array[2] = selections[2].reduce(rowReducer);
+}
+
+function colSum(array) {
+  array[0] = colReducer(0);
+  array[1] = colReducer(1);
+  array[2] = colReducer(2);
+}
+
+function checkForWinner(array) {
+  if (lastChoice.length < 7) {
+    array.forEach((i) => {
+      if (i === 3 || i === -3) {
+        gameOverWin();
+      }
+    });
+  } else {
+    gameOverTie();
+  }
+}
+
+function gameOverWin() {
+  console.log("Winner!!!!!");
+}
+
+function gameOverTie() {
+  console.log("its a tie.");
+}
+//TODO
+//count diagonal victory
+console.log(lastChoice.length);
