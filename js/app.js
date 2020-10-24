@@ -2,9 +2,9 @@ const winCondX1 = [
     document.getElementById("1").innerText === "x",
     document.getElementById("2").innerText === "x",
     document.getElementById("3").innerText === "x",
+]
     // once finished make a condition to check (if true true true value in the trues wins)
     // use a for loop for every item in list if one is false there is no winner
-]
 const winCondX2 = [
     document.getElementById("4").innerText === "x",
     document.getElementById("5").innerText === "x",
@@ -111,111 +111,127 @@ const winCondO8 = [
     // use a for loop for every item in list if one is false there is no winner
 ]
 
-function setO(click){
-    document.getElementById(click).innerText = "o";
-    document.getElementById("turn-order").innerText = "Player X's Turn";
-    
+
+let clearButton = document.querySelector("#clear-button");
+
+function checkXWin(){
+if (winCondX1[0] === true && winCondX1[1] === true && winCondX1[2] === true){
+    alert("Player X Wins")
+return true}
+else if (winCondX2[0] === true && winCondX2[1] === true && winCondX2[2] === true){
+    alert("Player X Wins")
+return true}
+else if (winCondX3[0] === true && winCondX3[1] === true && winCondX3[2] === true){
+    alert("Player X Wins")
+return true}
+else if (winCondX4[0] === true && winCondX4[1] === true && winCondX4[2] === true){
+    alert("Player X Wins")
+return true}
+else if (winCondX5[0] === true && winCondX5[1] === true && winCondX5[2] === true){
+    alert("Player X Wins")
+return true}
+else if (winCondX6[0] === true && winCondX6[1] === true && winCondX6[2] === true){
+    alert("Player X Wins")
+return true}
+else if (winCondX7[0] === true && winCondX7[1] === true && winCondX7[2] === true){
+    alert("Player X Wins")
+return true}
+
+else if (winCondX8[0] === true && winCondX8[1] === true && winCondX8[2] === true){
+    alert("Player X Wins")
+return true}
+else {
+    return false
+}
 }
 
-function setX(click){
-    document.getElementById(click).innerText = "x";
-    document.getElementById("turn-order").innerText = "Player O's Turn";
-}
 
+function checkOWin(){
+if (winCondO1[0] === true && winCondO1[1] === true && winCondO1[2] === true){
+    alert("Player O Wins")
+return true}
+else if (winCondO2[0] === true && winCondO2[1] === true && winCondO2[2] === true){
+    alert("Player O Wins")
+return true}
+else if (winCondO3[0] === true && winCondO3[1] === true && winCondO3[2] === true){
+    alert("Player O Wins")
+return true}
+else if (winCondO4[0] === true && winCondO4[1] === true && winCondO4[2] === true){
+    alert("Player O Wins")
+return true}
+else if (winCondO5[0] === true && winCondO5[1] === true && winCondO5[2] === true){
+    alert("Player O Wins")
+return true}
+else if (winCondO6[0] === true && winCondO6[1] === true && winCondO6[2] === true){
+    alert("Player O Wins")
+return true}
+else if (winCondO7[0] === true && winCondO7[1] === true && winCondO7[2] === true){
+    alert("Player O Wins")
+return true}
+else if (winCondO8[0] === true && winCondO8[1] === true && winCondO8[2] === true){
+    alert("Player O Wins")
+return true}
+else {
+    return false
+}
+}
 function click(event,target, id){
     document.addEventListener('click', function(e){
         if (document.getElementById("turn-order").innerText === "Player X's Turn"){
             setX(e.target.id)
-            checkXWin()
             checkOWin()
+            checkXWin()
         } else {
             setO(e.target.id)
             checkXWin()
-            console.log(checkOWin())
-
+            checkOWin()
         }
     })
 }
 
-let clearButton = document.querySelector("#clear-button");
-
-function clear() {
+function clear(click) {
     clearButton.addEventListener("click", function(){
         document.getElementById("1").innerText = " "
     })
 }
+function setO(click){
+    document.getElementById(click).innerHTML = "o";
+    document.getElementById("turn-order").innerHTML = "Player X's Turn";
+    checkXWin();
+    checkOWin();
+}
 
-// const winCondsX = [winCondX1, winCondX2, winCondX3,  winCondX4,  winCondX5,  winCondX6,  winCondX7,  winCondX8]
-// const winCondsO = [winCondO1, winCondO2, winCondO3,  winCondO4,  winCondO5,  winCondO6,  winCondO7,  winCondO8]
-
-function checkXWin(){
-if (winCondX1[1] === true && winCondX1[2] === true && winCondX1[3] === true){
-    document.getElementById("turn-order").innerText = "X Wins"
+function setX(click){
+    document.getElementById(click).innerHTML = "x";
+    document.getElementById("turn-order").innerHTML = "Player O's Turn";
+    checkXWin();
+    checkOWin();
+    
 }
-else if (winCondX2[1] === true && winCondX2[2] === true && winCondX2[3] === true){
-    document.getElementById("turn-order").innerText = "X Wins"
-}
-else if (winCondX3[1] === true && winCondX3[2] === true && winCondX3[3] === true){
-    document.getElementById("turn-order").innerText = "X Wins"
-}
-else if (winCondX4[1] === true && winCondX4[2] === true && winCondX4[3] === true){
-    document.getElementById("turn-order").innerText = "X Wins"
-}
-else if (winCondX5[1] === true && winCondX5[2] === true && winCondX5[3] === true){
-    document.getElementById("turn-order").innerText = "X Wins"
-}
-else if (winCondX6[1] === true && winCondX6[2] === true && winCondX6[3] === true){
-    document.getElementById("turn-order").innerText = "X Wins"
-}
-else if (winCondX7[1] === true && winCondX7[2] === true && winCondX7[3] === true){
-    document.getElementById("turn-order").innerText = "X Wins"
-}
-else if (winCondX8[1] === true && winCondX8[2] === true && winCondX8[3] === true){
-    document.getElementById("turn-order").innerText = "X Wins"
-}
-}
-function checkOWin(){
-if (winCondO1[1] === true && winCondO1[2] === true && winCondO1[3] === true){
-    document.getElementById("turn-order").innerText = "O Wins"
-}
-else if (winCondO2[1] === true && winCondO2[2] === true && winCondO2[3] === true){
-    document.getElementById("turn-order").innerText = "O Wins"
-}
-else if (winCondO3[1] === true && winCondO3[2] === true && winCondO3[3] === true){
-    document.getElementById("turn-order").innerText = "O Wins"
-}
-else if (winCondO4[1] === true && winCondO4[2] === true && winCondO4[3] === true){
-    document.getElementById("turn-order").innerText = "O Wins"
-}
-else if (winCondO5[1] === true && winCondO5[2] === true && winCondO5[3] === true){
-    document.getElementById("turn-order").innerText = "O Wins"
-}
-else if (winCondO6[1] === true && winCondO6[2] === true && winCondO6[3] === true){
-    document.getElementById("turn-order").innerText = "O Wins"
-}
-else if (winCondO7[1] === true && winCondO7[2] === true && winCondO7[3] === true){
-    document.getElementById("turn-order").innerText = "O Wins"
-}
-else if (winCondO8[1] === true && winCondO8[2] === true && winCondO8[3] === true){
-    document.getElementById("turn-order").innerText = "O Wins"
-}
+function clickforwin(){
+    document.addEventListener('click', function(){
+        if (checkXWin() === true) {
+            alert("X has won")
+            console.log(Hello)
+        }
+        else if(checkOWin() === true){
+            alert("O has won")
+        }
+        else {
+            alert("Take your turn please")
+        }
+})
 }
 
 
 click()
-
-// function clear(){
-//     document.getElementsByClassName("space").innerText = " "
-// }
-
-// function clearButton(){ 
-//     document.getElementsByClassName("clear-button").addEventListener("click", clear());
-// }
-// clearButton()
-
+clickforwin()
 // detect winner and whether the game is a draw ** WIN CONDITIONS MADE HOWEVER NEEDS IF STATEMENT ALSO NEEDS A FUNCTION THAT CHECKS FOR DRAW
 // maybe use something to check if every square is no longer a number and no one has won then the game is a draw
 
 //*BONUS 
 // set a clear button that will clear the board
 // make a heading to tell us who's turn it is
+
+// console.log(checkOWin())
+// console.log(win)
