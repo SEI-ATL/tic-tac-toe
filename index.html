@@ -8,10 +8,11 @@
 </head>
 <body>
   <h1>Tic Tac Toe</h1>
+  <h2>Players Turn</h2>
   <div class="wrapper">
-    <div class="space" id="1">1</div>
-    <div class="space" id="2">2</div>
-    <div class="space" id="3">3</div>
+    <div class="space" id="1">x</div>
+    <div class="space" id="2">x</div>
+    <div class="space" id="3">x</div>
     <div class="space" id="4">4</div>
     <div class="space" id="5">5</div>
     <div class="space" id="6">6</div>
@@ -19,7 +20,13 @@
     <div class="space" id="8">8</div>
     <div class="space" id="9">9</div>
   </div>
-  <
+  <div class="buttons">
+  <input type="radio" id="x" name="x" value="x">
+  <label for="x">Player X</label>
+  <input type="radio" id="o" name="o" value="o">
+  <label for="o">Player O</label>
+  <button>Clear</button>
+</div>
   <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
