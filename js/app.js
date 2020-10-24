@@ -64,8 +64,8 @@ function gameTracker() {
   rowSum(rows);
   colSum(cols);
   diagSum(diag);
-  checkForWinner(rows);
-  checkForWinner(cols);
+  checkForWinner(rows, cols, diag);
+  
   console.log(diag);
 }
 
@@ -116,20 +116,27 @@ function colSum(array) {
   array[2] = colReducer(2);
 }
 
-function checkForWinner(array) {
-  if (lastChoice.length < 7) {
-    array.forEach((i) => {
-      if (i === 3 || i === -3) {
-        gameOverWin();
-      }
-    });
+function checkForWinner(row, col, diag) {
+  let arrays = [row, col, diag];
+  if (lastChoice.length < 8) {
+    for (let i = 0; i < arrays.length; i++) {
+      arrays[i].forEach((i) => {
+        if (i === 3 || i === -3) {
+          gameOverWin(i);
+        }
+      });
+    }
   } else {
     gameOverTie();
   }
 }
 
-function gameOverWin() {
-  console.log("Winner!!!!!");
+function gameOverWin(winner) {
+  if (winner > 0) {
+    console.log("X's win!!!!");
+  } else {
+    console.log("O's win!!!!!");
+  }
 }
 
 function gameOverTie() {
