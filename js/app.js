@@ -30,7 +30,6 @@ const selections = [
 
 //functions
 function addHtml() {
-  checkForWinner();
   if (this.hasChildNodes()) {
     console.log("already selected");
   } else if (lastChoice[0] == "O" || lastChoice[0] == null) {
@@ -38,6 +37,7 @@ function addHtml() {
   } else {
     oTurn(this);
   }
+  checkForWinner();
 }
 
 function xTurn(ele) {
@@ -57,10 +57,21 @@ function oTurn(ele) {
 }
 
 function checkForWinner() {
-  for (let i = 0; i < selections.length; i++) {
-    for (let j = 0; j < selections[i].length; j++) {
-    }
-  }
-}
+  let rows = [0, 0, 0];
+  rows[0] = selections[0].reduce(reducer);
+  rows[1] = selections[1].reduce(reducer);
+  rows[2] = selections[2].reduce(reducer);
+  rows.forEach((i) => {
+      if (i === 3 || i === -3) {
+          console.log("Winner!!!!!");
+      }
+  })
 
+  }
+
+
+
+function reducer(total, val) {
+    return total + val;
+}
 
