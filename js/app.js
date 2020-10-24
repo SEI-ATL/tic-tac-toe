@@ -8,6 +8,17 @@ const oneTwo = document.getElementById("one-two");
 const twoZero = document.getElementById("two-zero");
 const twoOne = document.getElementById("two-one");
 const twoTwo = document.getElementById("two-two");
+const domArray = [
+  zeroZero,
+  zeroOne,
+  zeroTwo,
+  oneZero,
+  oneOne,
+  oneTwo,
+  twoZero,
+  twoOne,
+  twoTwo,
+];
 
 //event listeners
 zeroZero.addEventListener("click", addHtml);
@@ -22,8 +33,8 @@ twoTwo.addEventListener("click", addHtml);
 
 //variables
 var gameDecided = false;
-const lastChoice = [];
-const selections = [
+var lastChoice = [];
+var selections = [
   [null, null, null],
   [null, null, null],
   [null, null, null],
@@ -144,6 +155,26 @@ function gameOverTie() {
   gameDecided = true;
   console.log("its a tie.");
 }
-//TODO
-//count diagonal victory
 
+function clearDom(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].firstChild) {
+      array[i].firstChild.remove();
+    }
+  }
+}
+
+function reset() {
+  clearDom(domArray);
+  lastChoice = [];
+  selections = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null],
+  ];
+  gameDecided = false;
+}
+
+//TODO
+//reset button & function
+//winner and tie display message
