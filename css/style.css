@@ -1,3 +1,31 @@
 h1 {
-  color: purple;
+  color: black;
+  margin-top: 0;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  background-color: lightgray;
+  text-align: center;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border: 3px solid black;
+  height: 400px;
+  width: 400px;
+}
+
+.box {
+  border: 2px solid red;
+}
+
+
