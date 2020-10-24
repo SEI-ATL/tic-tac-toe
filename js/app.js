@@ -21,7 +21,7 @@ twoOne.addEventListener("click", addHtml);
 twoTwo.addEventListener("click", addHtml);
 
 //variables
-const winner = false;
+var gameDecided = false;
 const lastChoice = [];
 const selections = [
   [null, null, null],
@@ -31,14 +31,16 @@ const selections = [
 
 //functions
 function addHtml() {
-  if (this.hasChildNodes()) {
-    console.log("already selected");
-  } else if (lastChoice[0] == "O" || lastChoice[0] == null) {
-    xTurn(this);
-  } else {
-    oTurn(this);
+  if (gameDecided === false) {
+    if (this.hasChildNodes()) {
+      console.log("already selected");
+    } else if (lastChoice[0] == "O" || lastChoice[0] == null) {
+      xTurn(this);
+    } else {
+      oTurn(this);
+    }
+    gameTracker();
   }
-  gameTracker();
 }
 
 function xTurn(ele) {
@@ -64,9 +66,7 @@ function gameTracker() {
   rowSum(rows);
   colSum(cols);
   diagSum(diag);
-  checkForWinner(rows, cols, diag);
-  
-  console.log(diag);
+  checkForgameDecided(rows, cols, diag);
 }
 
 function rowReducer(total, val) {
@@ -116,9 +116,9 @@ function colSum(array) {
   array[2] = colReducer(2);
 }
 
-function checkForWinner(row, col, diag) {
+function checkForgameDecided(row, col, diag) {
   let arrays = [row, col, diag];
-  if (lastChoice.length < 8) {
+  if (lastChoice.length < 9) {
     for (let i = 0; i < arrays.length; i++) {
       arrays[i].forEach((i) => {
         if (i === 3 || i === -3) {
@@ -132,6 +132,7 @@ function checkForWinner(row, col, diag) {
 }
 
 function gameOverWin(winner) {
+  gameDecided = true;
   if (winner > 0) {
     console.log("X's win!!!!");
   } else {
@@ -140,8 +141,9 @@ function gameOverWin(winner) {
 }
 
 function gameOverTie() {
+  gameDecided = true;
   console.log("its a tie.");
 }
 //TODO
 //count diagonal victory
-console.log(lastChoice.length);
+
