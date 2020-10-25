@@ -1,3 +1,63 @@
-h1 {
-  color: purple;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: red;
+  margin: 50px;
+  padding: 50px;
+}
+
+body {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+  color: green;
+}
+
+.title {
+  text-align: center;
+}
+
+.status-action {
+  display: flex;
+  margin-top: 25px;
+  font-size: 25px;
+  justify-content: space-around;
+}
+
+.clear {
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: blue;
+}
+
+.game-grid {
+  background: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 50px;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background: red;
+  cursor: pointer;
+}
+
+.x::before {
+  content: 'x';
+  font-size: 175px;
+}
+
+.o::before {
+  content: 'o';
+  font-size: 175px;
 }
