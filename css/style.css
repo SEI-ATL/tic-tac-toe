@@ -4,7 +4,11 @@
     box-sizing: border-box;
   }
   
-  .container {
+.main_container {
+  margin: 0 auto;
+}
+
+  .box_container {
   display: grid;
     grid-template-columns: 150px 150px 150px;
     grid-template-rows: 150px 150px 150px;
@@ -15,27 +19,27 @@
     /* transform: translate(50%, 50%); */
   }
 
-
+#box0,
 #box1,
-#box2,
-#box3 {
+#box2
+ {
   border-top: none;
 }
 
-#box3,
-#box6, 
-#box9 {
+#box2,
+#box5, 
+#box8 {
   border-right: none;
 }
 
+#box6,
 #box7,
-#box8, 
-#box9 {
+#box8 {
   border-bottom: none;
 }
 
-#box1,
-#box4,
-#box7 {
+#box0,
+#box3,
+#box6 {
   border-left: none;
 }
