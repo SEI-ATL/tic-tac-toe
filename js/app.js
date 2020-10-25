@@ -12,12 +12,20 @@ const winningArray = [
     [2, 4, 6]
 ];
 
-const boxes = Array.from(document.querySelectorAll(".box_container .box"));
+let turn = "X";
+
+// Will be used on reset to update the board variable. I.e. board = emptyBoard. 
+const emptyBoard = ["", "", "", "", "", "", "", "", ""];
+
+// Holds the player's selection. Each selection has an index. 
+let board = ["", "", "", "", "", "", "", "", ""];
+
+// Creates an array from the on-screen board. The user's click is registered and the index will be used to update the board. 
+const boxes = Array.from(document.querySelectorAll(".box_container div"));
 console.log(boxes);
 
-const box0 = document.querySelector("#box0");
 
-box0.addEventListener('click', function(){
-    let index = 0;
-    
-});
+// Change the player's turn (ternary operator)
+const playerTurn = () => {
+    turn = turn === 'X' ? 'O' : 'X';
+}

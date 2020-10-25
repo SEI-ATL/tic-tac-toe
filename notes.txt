@@ -65,3 +65,13 @@ c3.addEventListener('click', function(){
 })
 
 //Success
+
+***Next Day***
+After reviewing class material realized I needed to create an array to hold user's selections.
+Initially I thought I could update an array of arrays with the player's selection but this proved impossible for me.
+Essentially I will use this array like an object, with the index as the key and player's symbol as the value.
+This array can be compared to the winningArray which contains the 8 possible combination of wins.
+If a player has their symbol in each of the indexes for a particular array, they are declared winner.
+I also need to identify where the user has clicked. That click needs to correspond to the location in the array containing the 
+current board. 
+I need to render the current board selections to the screen. 
