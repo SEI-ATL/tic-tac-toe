@@ -1,12 +1,11 @@
 let gameboard = document.querySelector('.gameboard');
 let squares = document.querySelectorAll('.square');
 let topMsg = document.querySelector('.top-msg');
-let promptPlayer1 = document.querySelector('.player1');
-let promptPlayer2 = document.querySelector('.player2');
-let outcomeMsg = document.querySelector('.outcome-msg')
 let playAgain = document.querySelector('.play-again');
-let xWinsTotal = document.querySelector('.wins.blue')
-let oWinsTotal = document.querySelector('.wins.red')
+let xWinsTotal = document.querySelector('.wins.blue');
+let oWinsTotal = document.querySelector('.wins.red');
+let twoPlayerGame = document.querySelector('#two-player-game');
+let onePlayerGame = document.querySelector('#one-player-game');
 
 let player1 = true;
 let turns = 0;
@@ -15,28 +14,70 @@ let xWins = 0;
 let oWins = 0;
 
 
+// Resets the game when the number of players is changed
+
+function changeNumPlayers() {
+  resetGameboard();
+  xWins = 0;
+  oWins = 0;
+  xWinsTotal.textContent = xWins;
+  oWinsTotal.textContent = oWins;
+}
+
+
 // Handles the gameplay, i.e. what happens when a user clicks on a square
 
-function displaySelection(event) {
-  if (event.target.textContent !== '') {
+function handleClick(event) {
+  if (event.target.textContent !== '' || gameOver === true) {
     return;
-  } else if (gameOver === true) {
-    return;
-  }
-  if (player1 === true) {
-    event.target.textContent = 'X';
-    event.target.classList.add('x');
-    topMsg.innerHTML = '<h3>PLAYER 2, CAST YOUR VOTE<br>FOR THE O PARTY</h3>';
-    checkforWin('x');
-    player1 = false;
+  } else if (twoPlayerGame.checked === false) {
+    handleClickOnePlayer(event);
+  } else if (player1 === true) {
+    updateGameboard(event, 'x', '2', 'o');
   } else {
-    event.target.textContent = 'O';
-    event.target.classList.add('o');
-    topMsg.innerHTML = '<h3>PLAYER 1, CAST YOUR VOTE<br>FOR THE X PARTY</h3>';
-    checkforWin('o');
-    player1 = true;
+    updateGameboard(event, 'o', '1', 'x');
   }
   checkForTie();
+}
+
+function updateGameboard(event, marker, oppNumber, oppMarker) {
+  event.target.textContent = marker.toUpperCase();
+  event.target.classList.add(marker);
+  if (twoPlayerGame.checked === true) {
+    topMsg.innerHTML = `<h3>PLAYER ${oppNumber}, CAST YOUR VOTE<br>FOR THE ${oppMarker.toUpperCase()} PARTY</h3>`;
+  } else {
+    topMsg.innerHTML = `<h3>THE COMPUTER IS NOW<br>CASTING ITS VOTE</h3>`
+  }
+  checkforWin(marker);
+  player1 = !player1;
+}
+
+
+// Handles the gameplay for a one-player game
+
+function handleClickOnePlayer(event) {
+  if (player1 === false || event.target.textContent !== '' || gameOver === true) {
+    return;
+  } else {
+    updateGameboard(event, 'x', '2', 'o');
+    checkForTie();
+    if (gameOver === false) {
+      setTimeout(computerMoves, 2000);
+    }
+  }
+  console.log(turns);
+}
+
+function computerMoves() {
+  let randomNum = Math.floor(Math.random() * 9);
+  while (squares[randomNum].classList[1] === 'x' || squares[randomNum].classList[1] === 'o') {
+    randomNum = Math.floor(Math.random() * 9);
+  }
+  squares[randomNum].textContent = 'O';
+  squares[randomNum].classList.add('o');
+  topMsg.innerHTML = `<h3>PLAYER 1, CAST YOUR VOTE<br>FOR THE X PARTY`;
+  checkforWin('o');
+  player1 = true;
 }
 
 
@@ -117,5 +158,7 @@ function resetGameboard() {
 
 // Add event listeners
 
-gameboard.addEventListener('click', displaySelection);
+onePlayerGame.addEventListener('change', changeNumPlayers);
+twoPlayerGame.addEventListener('change', changeNumPlayers);
+gameboard.addEventListener('click', handleClick);
 playAgain.addEventListener('click', resetGameboard);
