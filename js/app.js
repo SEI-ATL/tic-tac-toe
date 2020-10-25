@@ -242,7 +242,3 @@ function animateWinners(array) {
     twoZero.firstChild.classList.add('blink_me');
   }
 }
-
-//TODO
-
-//winner and tie display message
