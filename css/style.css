@@ -1,55 +1,165 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
 
 * {
-  font-family: 'Gochi Hand', cursive;
+  font-family: 'Josefin Sans', sans-serif;
   margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-h1, h2 {
-  font-size: 4em;
-  margin-top: 50px;
+/* Header styles */
+
+header {
+  background-color: #293d8c;
+  padding: 40px 0 20px 0;
+}
+
+h1 {
+  color: white;
+  font-size: 5em;
+}
+
+.star {
+  font-size: 0.5em;
+  margin: 0 -15px;
+  vertical-align: 40%;
+}
+
+.year {
+  color: white;
+  font-size: 3.5em;
+  opacity: 0.5;
+}
+
+.year-spacing {
+  letter-spacing: 0.8em;
+}
+
+/* Main styles */
+
+.top-msg {
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  padding: 10px 20px 0 20px;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+  line-height: 1.3;
 }
 
 .game-section {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 50px 0;
 }
 
 .gameboard {
   background-color: black;
   border: 10px solid black;
   display: grid;
-  gap: 5px;
+  gap: 10px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  height: 500px;
   margin: 0 30px;
-  width: 500px;
 }
 
 .square {
   align-items: center;
   background-color: white;
   display: flex;
-  font-size: 8em;
+  font-family: 'Gochi Hand', sans-serif;
+  font-size: 10em;
+  height: 200px;
   justify-content: center;
+  width: 200px;
 }
 
-.player1 {
-  font-size: 1.5em;
-  transform: rotate(-10deg);
+.x {
+  color: #293d8c;
 }
 
-.player2 {
-  font-size: 1.5em;
-  transform: rotate(10deg);
-  visibility: hidden;
+.o {
+  color: #e93345;
+}
+
+.party-name {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+.wins {
+  align-items: center;
+  border: 5px solid black;
+  display: flex;
+  font-size: 2.5em;
+  height: 50px;
+  justify-content: center;
+  margin-top: 5px;
+  padding-top: 5px;
+  width: 55px;
+}
+
+.blue {
+  color: #293d8c;
+  border-color: #293d8c;
+}
+
+.red {
+  color: #e93345;
+  border-color: #e93345;
+}
+
+.btm-msg {
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  padding: 0 20px;
 }
 
 h4 {
   font-size: 2em;
   text-decoration: underline;
+}
+
+/* Footer styles */
+
+.red-stripe {
+  background-color: #e93345;
+  height: 10px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  background-color: #e93345;
+  height: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+
+.gameboard {
+  border-width: 1vw;
+  gap: 1vw;
+}
+
+.square {
+  font-size: 18vw;
+  height: 20vw;
+  width: 20vw;
+}
+
 }

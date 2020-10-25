@@ -1,34 +1,39 @@
 let gameboard = document.querySelector('.gameboard');
 let squares = document.querySelectorAll('.square');
+let topMsg = document.querySelector('.top-msg');
 let promptPlayer1 = document.querySelector('.player1');
 let promptPlayer2 = document.querySelector('.player2');
 let outcomeMsg = document.querySelector('.outcome-msg')
 let playAgain = document.querySelector('.play-again');
+let xWinsTotal = document.querySelector('.wins.blue')
+let oWinsTotal = document.querySelector('.wins.red')
 
 let player1 = true;
 let turns = 0;
 let gameOver = false;
+let xWins = 0;
+let oWins = 0;
 
 
 // Handles the gameplay, i.e. what happens when a user clicks on a square
 
 function displaySelection(event) {
-  if (event.target.innerText !== '') {
+  if (event.target.textContent !== '') {
+    return;
+  } else if (gameOver === true) {
     return;
   }
   if (player1 === true) {
-    event.target.innerText = 'X';
-    event.target.classList.add('1');
-    promptPlayer1.style.visibility = 'hidden';
-    promptPlayer2.style.visibility = 'visible';
-    checkforWin('1');
+    event.target.textContent = 'X';
+    event.target.classList.add('x');
+    topMsg.innerHTML = '<h3>PLAYER 2, CAST YOUR VOTE<br>FOR THE O PARTY</h3>';
+    checkforWin('x');
     player1 = false;
   } else {
-    event.target.innerText = 'O';
-    event.target.classList.add('2');
-    promptPlayer1.style.visibility = 'visible';
-    promptPlayer2.style.visibility = 'hidden';
-    checkforWin('2');
+    event.target.textContent = 'O';
+    event.target.classList.add('o');
+    topMsg.innerHTML = '<h3>PLAYER 1, CAST YOUR VOTE<br>FOR THE X PARTY</h3>';
+    checkforWin('o');
     player1 = true;
   }
   checkForTie();
@@ -61,10 +66,15 @@ function compareValues(sq1, sq2, sq3, player) {
 }
 
 function displayWinMsg(player) {
-  promptPlayer1.style.visibility = 'hidden';
-  promptPlayer2.style.visibility = 'hidden';
-  outcomeMsg.textContent = `Player ${player} wins!`;
+  topMsg.innerHTML = `<h2>THE ${player.toUpperCase()} PARTY WINS!</h2>`;
   displayPlayAgain();
+  if (player === 'x') {
+    xWins++;
+  } else {
+    oWins++;
+  }
+  xWinsTotal.textContent = xWins;
+  oWinsTotal.textContent = oWins;
   gameOver = true;
 }
 
@@ -80,9 +90,7 @@ function checkForTie() {
 }
 
 function displayTieMsg() {
-  promptPlayer1.style.visibility = 'hidden';
-  promptPlayer2.style.visibility = 'hidden';
-  outcomeMsg.textContent = `Damn, it's a tie.`;
+  topMsg.innerHTML = `<h2>A TIE? WE DEMAND A RECOUNT!</h2>`;
   displayPlayAgain();
   gameOver = true;
 }
@@ -91,7 +99,7 @@ function displayTieMsg() {
 // Handles the "Play again" prompt and resets the gameboard
 
 function displayPlayAgain() {
-  playAgain.textContent = `Play again`;
+  playAgain.textContent = `PLAY AGAIN`;
 }
 
 function resetGameboard() {
@@ -99,9 +107,8 @@ function resetGameboard() {
     squares[i].textContent = '';
     squares[i].className = 'square';
   }
-  outcomeMsg.textContent = '';
+  topMsg.innerHTML = '<h3>PLAYER 1, CAST YOUR VOTE<br>FOR THE X PARTY</h3>';
   playAgain.textContent = '';
-  promptPlayer1.style.visibility = 'visible';
   player1 = true;
   turns = 0;
   gameOver = false;
