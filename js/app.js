@@ -8,8 +8,10 @@ const oneTwo = document.getElementById("one-two");
 const twoZero = document.getElementById("two-zero");
 const twoOne = document.getElementById("two-one");
 const twoTwo = document.getElementById("two-two");
-const clickToStart = document.getElementById("start-text")
-const ticTacToe = document.getElementById('title');
+const clickToStart = document.getElementById("start-text");
+const ticTacToe = document.getElementById("title");
+const xScoreBoard = document.getElementById("x-score");
+const oScoreBoard = document.getElementById("o-score");
 const domArray = [
   zeroZero,
   zeroOne,
@@ -36,6 +38,8 @@ twoTwo.addEventListener("click", addHtml);
 //variables
 var gameDecided = false;
 var lastChoice = [];
+var xScore = 0;
+var oScore = 0;
 var selections = [
   [null, null, null],
   [null, null, null],
@@ -44,7 +48,7 @@ var selections = [
 
 //functions
 function addHtml() {
-  clickToStart.style.color = '#16262E';
+  clickToStart.style.color = "#16262E";
   if (gameDecided === false) {
     if (this.hasChildNodes()) {
       console.log("already selected");
@@ -131,28 +135,35 @@ function colSum(array) {
 }
 
 function checkForGameDecided(row, col, diag) {
-  let arrays = [row, col, diag];
-  if (lastChoice.length < 9) {
-    for (let i = 0; i < arrays.length; i++) {
-      arrays[i].forEach((i) => {
-        if (i === 3 || i === -3) {
-          gameOverWin(i);
-        }
-      });
-    }
+  let arrays = row.concat(col, diag);
+  if (lastChoice.length != 9) {
+    arrays.forEach((i) => {
+      if (i == 3 || i == -3) {
+        gameOverWin(i);
+      }
+    });
   } else {
-    gameOverTie();
+    arrays.forEach((i) => {
+      if (i == 3 || i == -3) {
+        gameOverWin(i);
+      }
+    });
+    if (Math.max(...arrays) !== 3 && Math.min(...arrays) !== -3) {
+      gameOverTie();
+    }
   }
 }
 
 function gameOverWin(winner) {
   gameDecided = true;
   if (winner > 0) {
+    xScore++;
+    xScoreBoard.innerText = `${xScore}`;
     ticTacToe.style.letterSpacing = "7px";
     ticTacToe.innerText = "X's Win!";
-    // ticTacToe.style.color = "#16262e";
-    
   } else {
+    oScore++;
+    oScoreBoard.innerText = `${oScore}`;
     ticTacToe.style.letterSpacing = "7px";
     ticTacToe.innerText = "O's Win!";
   }
@@ -160,7 +171,8 @@ function gameOverWin(winner) {
 
 function gameOverTie() {
   gameDecided = true;
-  console.log("its a tie.");
+  ticTacToe.style.letterSpacing = "7px";
+  ticTacToe.innerText = "It's a tie";
 }
 
 function clearDom(array) {
@@ -180,8 +192,8 @@ function reset() {
     [null, null, null],
   ];
   ticTacToe.style.letterSpacing = "0";
-  ticTacToe.innerText = "Tic-Tac-Toe"
-  clickToStart.style.color = '#E0FF4F';
+  ticTacToe.innerText = "Tic-Tac-Toe";
+  clickToStart.style.color = "#E0FF4F";
   gameDecided = false;
 }
 

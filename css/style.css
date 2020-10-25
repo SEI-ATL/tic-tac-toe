@@ -13,9 +13,8 @@ h1 {
 }
 
 p {
-  color: #e0ff4f;
-  margin-top: 0;
-  margin-bottom: 30px;
+  color: #09bc8a;
+  letter-spacing: .5px;
 }
 
 body {
@@ -27,7 +26,7 @@ main {
   margin-top: 80px;
   background-color: #16262e;
   text-align: center;
-  padding: 10px 30px 30px 30px;
+  padding: 10px 30px;
   border-radius: 30px;
   border: 10px solid;
 }
@@ -62,6 +61,17 @@ h2 {
   font-size: 80px;
 }
 
+span {
+  color: #e0ff4f;
+  padding-left: 4px;
+}
+
+.scores {
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -72,6 +82,9 @@ h2 {
 
 #start-text {
   transition: all 0.2s;
+  color: #e0ff4f;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 #title {
