@@ -3,12 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Front-End</title>
+  <title>Tic-Tac-Toe</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script async type="text/javascript" src="js/app.js" ></script>
 </head>
 <body>
-  <h1>Hello Front-End</h1>
+  <div class = "container">
+  <div id="timer"></div>
+  <div class = "one">TIC-TAC-TOE</div>
+  <div class="player" id="O"></div>
+  <div class="board">
+    <!-- not sure if i want to do 9 separate id's or 9
+      classes and then call each class with query selector??? -->
+    <div class="space" id="00"></div>
+    <div class="space" id="01"></div>
+    <div class="space" id="02"></div>
 
-  <script type="text/javascript" src="js/app.js"></script>
+    <div class="space" id="10"></div>
+    <div class="space" id="11"></div>
+    <div class="space" id="12"></div>
+
+    <div class="space" id="20"></div>
+    <div class="space" id="21"></div>
+    <div class="space" id="22"></div>
+
+  </div>
+  <div class="player" id="X"></div>
+  <div class = "two"></div>
+
+</div>
 </body>
 </html>
