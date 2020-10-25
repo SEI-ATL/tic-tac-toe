@@ -1,3 +1,26 @@
 h1 {
-  color: purple;
+  color: burlywood;
+  text-align: center;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  
+  background-color: cornflowerblue;
+  padding: 5px;
+
+}
+
+.eachBox{
+  border:solid black;
+  text-align: center;
+  cursor: pointer;
+}
+.eachBox:hover{
+  background-color: blanchedalmond;
+}
+
+button{
+  cursor: pointer;
 }
