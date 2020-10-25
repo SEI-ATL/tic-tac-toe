@@ -1,7 +1,7 @@
 html {
   font-family: "Fredoka One", cursive;
   color: #3c7a89;
-  background-color: #333333;
+  background-color: #333;
 }
 
 h1 {
@@ -52,6 +52,7 @@ button {
 button:hover {
   color: #e0ff4f;
   background-color: rgba(46, 71, 86, .8);
+  cursor: pointer;
 }
 
 h2 {
@@ -95,6 +96,11 @@ span {
   border: 4px solid #09bc8a;
 }
 
+.box:hover {
+  /* cursor: pointer; */
+  background-color: rgba(46, 71, 86, .3);
+}
+
 .left {
   border-left: none;
 }
@@ -109,4 +115,15 @@ span {
 
 .bottom {
   border-bottom: none;
+}
+
+.blink_me {
+  color: #ff9bcd;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: .5;
+  }
 }
