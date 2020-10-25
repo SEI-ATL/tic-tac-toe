@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello Front-End</title>
+    <title>Tic-Tac-Toe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
     <main>
       <h1>Tic-Tac-Toe</h1>
+      <p id="start-text">(click to start)</p>
       <div class="board">
-        <div id="zero-zero" class="box" data-row="0" data-col="0"></div>
-        <div id="zero-one" class="box" data-row="0" data-col="1"></div>
-        <div id="zero-two" class="box" data-row="0" data-col="2"></div>
-        <div id="one-zero" class="box" data-row="1" data-col="0"></div>
+        <div id="zero-zero" class="box left top" data-row="0" data-col="0"></div>
+        <div id="zero-one" class="box top" data-row="0" data-col="1"></div>
+        <div id="zero-two" class="box top right" data-row="0" data-col="2"></div>
+        <div id="one-zero" class="box left" data-row="1" data-col="0"></div>
         <div id="one-one" class="box" data-row="1" data-col="1"></div>
-        <div id="one-two" class="box" data-row="1" data-col="2"></div>
-        <div id="two-zero" class="box" data-row="2" data-col="0"></div>
-        <div id="two-one" class="box" data-row="2" data-col="1"></div>
-        <div id="two-two" class="box" data-row="2" data-col="2"></div>
+        <div id="one-two" class="box right" data-row="1" data-col="2"></div>
+        <div id="two-zero" class="box left bottom" data-row="2" data-col="0"></div>
+        <div id="two-one" class="box bottom" data-row="2" data-col="1"></div>
+        <div id="two-two" class="box right bottom" data-row="2" data-col="2"></div>
       </div>
       <button onclick="reset()">Reset</button>
     </main>

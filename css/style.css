@@ -1,6 +1,20 @@
+html {
+  font-family: "Fredoka One", cursive;
+  color: #3c7a89;
+  background-color: #333333;
+}
+
 h1 {
-  color: black;
+  color: #e0ff4f;
+  font-size: 50px;
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  color: #e0ff4f;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 body {
@@ -9,10 +23,42 @@ body {
 }
 
 main {
-  background-color: lightgray;
+  margin-top: 80px;
+  background-color: #16262e;
   text-align: center;
   padding: 30px;
   border-radius: 30px;
+  border: 10px solid;
+}
+
+button {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 2px 20px;
+  outline: none;
+  border: 0.16em solid antiquewhite;
+  background: none;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 25px;
+  letter-spacing: 3px;
+  color: antiquewhite;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+button:hover {
+  color: #e0ff4f;
+  background-color: rgba(46, 71, 86, .8);
+}
+
+h2 {
+  color: #dbc2cf;
+  padding-top: 15px;
+  margin: 0;
+  font-size: 80px;
 }
 
 .board {
@@ -23,8 +69,27 @@ main {
   width: 400px;
 }
 
-.box {
-  border: 2px solid red;
+#start-text {
+  transition: all 0.2s;
 }
 
+.box {
+  border: 4px solid #09bc8a;
+  
+}
 
+.left {
+  border-left: none;
+}
+
+.top {
+  border-top: none;
+}
+
+.right {
+  border-right: none;
+}
+
+.bottom {
+  border-bottom: none;
+}

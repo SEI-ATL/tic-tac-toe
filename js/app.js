@@ -8,6 +8,7 @@ const oneTwo = document.getElementById("one-two");
 const twoZero = document.getElementById("two-zero");
 const twoOne = document.getElementById("two-one");
 const twoTwo = document.getElementById("two-two");
+const clickToStart = document.getElementById("start-text")
 const domArray = [
   zeroZero,
   zeroOne,
@@ -42,6 +43,7 @@ var selections = [
 
 //functions
 function addHtml() {
+  clickToStart.style.color = '#16262E';
   if (gameDecided === false) {
     if (this.hasChildNodes()) {
       console.log("already selected");
@@ -172,6 +174,7 @@ function reset() {
     [null, null, null],
     [null, null, null],
   ];
+  clickToStart.style.color = '#E0FF4F';
   gameDecided = false;
 }
 
