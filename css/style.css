@@ -8,13 +8,11 @@
   display: grid;
     grid-template-columns: 150px 150px 150px;
     grid-template-rows: 150px 150px 150px;
-  justify-content: center;
-    text-align: center;
   }
   
   .box {
     border: 5px solid black;
-    transform: translate(50%, 50%);
+    /* transform: translate(50%, 50%); */
   }
 
 
