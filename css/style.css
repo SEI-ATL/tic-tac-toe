@@ -96,10 +96,6 @@ span {
   border: 4px solid #09bc8a;
 }
 
-.box:hover {
-  /* cursor: pointer; */
-  background-color: rgba(46, 71, 86, .3);
-}
 
 .left {
   border-left: none;
