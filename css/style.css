@@ -1,3 +1,50 @@
+body{
+  background-color: lightcyan;
+}
+
 h1 {
-  color: purple;
+  margin: 50px auto;
+  max-width: 700px;
+  font-size: 60px;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px 300px;
+  background: gray;
+  width: 900px;
+  height: 900px;
+}
+
+.top {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 275px;
+}
+
+.mid {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 275px;
+}
+
+.bot {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 275px;
+}
+
+#reset {
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  background-color: lightgray;
+  font-size: 50px;
+  border: 5px solid darkgray;
 }
