@@ -9,10 +9,10 @@
 
 
 ### PvP
-![Imgur](https://imgur.com/urhn4bg)
+![alt text](https://github.com/ruvvet/tic-tac-toe/blob/img/ttt-pvp.gif?raw=true)
 
 ### PvAi
-![Imgur](https://imgur.com/0MSWJNq)
+![alt text](https://github.com/ruvvet/tic-tac-toe/blob/img/ttt-pve.gif?raw=true)
 
 ### To-Do
 
