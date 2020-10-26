@@ -17,16 +17,13 @@ const gameBoard = [
 
 //functions
 function assignGamepiece(e) {
+    //ensure computer does not get two turns by checking the mode+turn first
     if (opponent === 'local' || (opponent === 'computer' && turn === 'X')) {
         let cell = e.target.id;
         //do not try to assign a piece to the wrong html element
-        if (cell === '') {
-            return;
-        }
+        if (cell === '') { return; }
         //do not play if game is over
-        if (gameOver) {
-            return;
-        }
+        if (gameOver) { return; }
         //if x's turn, add x to game board and display in correct div, else if o's turn same for o
         //check if cell is occupied.
         let i = parseInt(cell[1]);
@@ -40,7 +37,6 @@ function assignGamepiece(e) {
             checkEndConditions(i, j);
         }
     }
-
 }
 
 function checkEndConditions(i, j) {
