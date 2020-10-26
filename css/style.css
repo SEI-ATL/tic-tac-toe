@@ -1,3 +1,50 @@
 h1 {
   color: purple;
 }
+
+body {
+  text-align: center;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3,auto);
+  width: 300px;
+  margin: 40px auto;
+  text-align: center;
+
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: 70px;
+  text-align: center;
+
+}
+.box:hover {
+  background-color: grey;
+}
+.X::before {
+  content: 'x';
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  font-size: 70px;;
+}
+
+.O::after {
+  content: 'o';
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  font-size: 70px;;
+}
+
+
+p {
+  text-align: center;
+}
