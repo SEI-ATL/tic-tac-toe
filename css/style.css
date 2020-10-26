@@ -92,6 +92,7 @@ h1 {
   font-size: 50px;
   border: 5px solid darkgray;
   font-family: 'Permanent Marker', cursive;
+  cursor: pointer;
 }
 
 h2 {
@@ -100,4 +101,8 @@ h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 45px;
   text-align: center;
+}
+
+#reset:hover {
+  border: 10px solid black;
 }

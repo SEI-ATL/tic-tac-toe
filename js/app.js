@@ -247,3 +247,6 @@ document.querySelector('#reset').addEventListener('click', function(e) {
     document.querySelector('#bot-right').innerHTML = '';
     playerTurn();
 })
+
+// can adjust if cell === '' for box clicks
+// can set gameLive const to end game if winner or draw
