@@ -3,6 +3,7 @@
 /* Variable Declarations*/
 let turn = "X";
 let turnNumber = 0;
+let gameStatus;
 
 // Variable declaration for all board boxes.
 let box0 = document.querySelector("#box0");
@@ -14,6 +15,7 @@ let box5 = document.querySelector("#box5");
 let box6 = document.querySelector("#box6");
 let box7 = document.querySelector("#box7");
 let box8 = document.querySelector("#box8");
+let resetButton = document.querySelector("#reset-button");
 
 // List of winning combinations in the game. 
 const winningArray = [
@@ -33,6 +35,11 @@ const emptyBoard = ["", "", "", "", "", "", "", "", ""];
 // Holds the player's selection based on index.
 let board = ["", "", "", "", "", "", "", "", ""];
 
+let changeStatus = () => {
+    gameStatus = "gameOver";
+    return alert("Game Over")
+};
+
 function checkForWin() {
     let winner = null;
     if (turnNumber >= 5) {
@@ -41,7 +48,7 @@ function checkForWin() {
             winner = board[combo[0]];
     });
     if (winner !== null) {
-        return alert("Game Over")
+        changeStatus();
     } else  if (turnNumber === 9) {
         return alert("It's a tie!")
     } else {
@@ -52,7 +59,7 @@ function checkForWin() {
 
 const handleClick = (event) => {
     let index = Number.parseInt(event.target.id.replace('box',''));
-    if(board[index] !== '') {
+    if(board[index] !== '' || gameStatus === "gameOver") {
         return;
     } else {
     board[index] = turn;
@@ -65,7 +72,23 @@ const handleClick = (event) => {
     }  
     turnNumber++;
     checkForWin();
+    }
 }
+
+const resetGame = () => {
+    board = emptyBoard;
+    turn = "X";
+    turnNumber = 0;
+    gameStatus = null;
+    document.querySelector("#box0").innerText = '';
+    document.querySelector("#box1").innerText = '';
+    document.querySelector("#box2").innerText = '';
+    document.querySelector("#box3").innerText = '';
+    document.querySelector("#box4").innerText = '';
+    document.querySelector("#box5").innerText = '';
+    document.querySelector("#box6").innerText = '';
+    document.querySelector("#box7").innerText = '';
+    document.querySelector("#box8").innerText = '';
 }
 
 // Event listeners for all 9 boxes on the game board. 
@@ -78,6 +101,7 @@ box5.addEventListener("click", handleClick);
 box6.addEventListener("click", handleClick);
 box7.addEventListener("click", handleClick);
 box8.addEventListener("click", handleClick);
+resetButton.addEventListener("click", resetGame);
 
 
 //Event listener on the game board which grabs the id of the clicked element. 
