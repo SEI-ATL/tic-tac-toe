@@ -84,7 +84,7 @@ box4.addEventListener('click', () => {
     } else {
         box4.textContent = player;
         let centerRowO = centerRowWinner(box4, box5, box6, player);
-        player = 'O';
+        player = 'X';
     }
 });
 box5.addEventListener('click', ()=> {
@@ -95,11 +95,13 @@ box5.addEventListener('click', ()=> {
 
         }
         player = 'O'
-    }  else 
+    }  else {
         box5.textContent = player;
         let centerRowO = centerRowWinner(box4, box5, box6, player);
-        if (centerRowO) {
+        player = 'X';
+        
         }
+
     });
 box6.addEventListener('click', () => {
     if(player === 'X') {
@@ -109,12 +111,11 @@ box6.addEventListener('click', () => {
             
         }
         player = 'O'
-    }  else
+    }  else{
         box6.textContent = player;
         let centerRowO = centerRowWinner (box4, box5, box6, player);
-        if (centerRowO){
-
-        }
+        player = 'X';
+    }
 });
 
 // need to difine the boxes
@@ -134,12 +135,11 @@ box7.addEventListener('click', () => {
 
         }
         player ='O'
-    } else
+    } else {
         box7.textContent = player;
         let bottomRowO = bottomRowWinner(box7, box8, box9, player);
-        if (bottomRowO) {
-
-        }     
+        player = 'X';
+    }
 });
 box8.addEventListener('click', () => {
     if(player === 'X') {
@@ -149,13 +149,12 @@ box8.addEventListener('click', () => {
 
         }
         player ='O'
-    } else
+    } else {
         box8.textContent = player;
         let bottomRowO = bottomRowWinner(box7, box8, box9, player);
-        if (bottomRowO) {
-
-        }
-    });
+        player = 'X';
+    }
+});
 box9.addEventListener('click', () => {
     if(player === 'X') {
         box9.textContent = player;
@@ -167,10 +166,8 @@ box9.addEventListener('click', () => {
     } else
         box9.textContent = player;
         let bottomRowO = bottomRowWinner(box7, box8, box9, player);
-        if (bottomRowO) {
-    
-            }
-        });
+        player = 'X';
+    });
               
 
 function bottomRowWinner(box7, box8, box9, player) {
