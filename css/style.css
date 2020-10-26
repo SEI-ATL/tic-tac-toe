@@ -1,3 +1,31 @@
 h1 {
   color: purple;
 }
+.grid {
+  display: table;
+  position: center;
+}
+.box:hover {
+  background-color: lightgray;
+} 
+
+.row {
+  display: table-row;
+  color: blue;
+  width: 100px;
+  height: 100px;
+
+}
+.button {
+  margin: 20px 0;
+
+}
+.box{
+  display: table-cell;
+  background-color: purple;
+  width: 100px;
+  height: 100px;
+  border: 2px solid black; /**/
+  font-size: 80px;
+  text-align: center;
+}
