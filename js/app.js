@@ -23,7 +23,7 @@ let oMoves=[];
 // array that stores moves by the second player "0";
 let status ="gameOn";
 // a constant that enables click events in the grid
-
+let message;
 //fetching elements from HTML
 const squares = document.querySelectorAll('.cell');
 let victoryMessage= document.getElementById('screen');
@@ -47,7 +47,8 @@ function arrayContainsArray (superset, subset) {
 
 //FUNCTION THAT RESETS THE GAME!!!!
 function resetGame(){
-    players = "";
+    players = "X";
+    message = "O"
     xMoves=[];
     oMoves=[];
     victoryMessage.innerText ="";
@@ -96,7 +97,7 @@ function checkWinner (player){
           buttonDiv.appendChild(resetButton);
           resetButton.addEventListener('click', resetGame);
           status ="gameOver";
-            console.log(status);
+          console.log(status);
           return true;
       }
   }
@@ -114,14 +115,16 @@ for (let i = 0; i < squares.length; i++){
         moveCounter = moveCounter + 1;
         if(moveCounter % 2 !== 0){
             players = "X";
-            xMoves.push(i);
-            xMoves=xMoves.sort();
+            message ="O"
+            oMoves.push(i);
+            oMoves=oMoves.sort();
             
             //console.log(moveCounter,player,oMoves) - for tests;
         }else{
             players = "O";
-            oMoves.push(i);
-            oMoves=oMoves.sort()
+            message ="X"
+            xMoves.push(i);
+            xMoves=xMoves.sort()
             //console.log(moveCounter,player, xMoves) - for tests;
         }
         // --------------------------------------------    
@@ -131,8 +134,8 @@ for (let i = 0; i < squares.length; i++){
         //console.log(`You clicked on ${id}.`);
         h1.innerText = players;
         let playerInfo =document.querySelector('h2');
-        playerInfo.innerText =`Player ${players}`
-        if(players === "X"){
+        playerInfo.innerText =`Player ${message}`
+        if(players === "O"){
             checkWinner(xMoves)
         }else{
             checkWinner(oMoves)
