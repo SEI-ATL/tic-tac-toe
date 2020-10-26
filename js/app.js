@@ -37,7 +37,6 @@ function handleClick(event) {
   } else {
     updateGameboard(event, 'o', '1', 'x');
   }
-  checkForTie();
 }
 
 function updateGameboard(event, marker, oppNumber, oppMarker) {
@@ -60,7 +59,6 @@ function handleClickOnePlayer(event) {
     return;
   } else {
     updateGameboard(event, 'x', '2', 'o');
-    checkForTie();
     if (gameOver === false) {
       setTimeout(computerMoves, 2000);
     }
@@ -94,6 +92,7 @@ function checkforWin(player) {
     compareValues(2, 4, 6, player) === true) {
     displayWinMsg(player);
   }
+  checkForTie();
 }
 
 function compareValues(sq1, sq2, sq3, player) {
