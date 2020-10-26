@@ -48,7 +48,7 @@ if(box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML 
 }
 
 
-for(var i = 0; i < boxes.length; i++){
+for(let i = 0; i < boxes.length; i++){
 boxes[i].onclick = function(){
     if(this.innerHTML !== "X" && this.innerHTML !== "O"){
     if(X_or_O%2 === 0){
@@ -72,7 +72,7 @@ boxes[i].onclick = function(){
 
 function replay(){
 
-for(var i = 0; i < boxes.length; i++){
+for(let i = 0; i < boxes.length; i++){
     boxes[i].classList.remove("win");
     boxes[i].innerHTML = "";
     turn.innerHTML = "Play";
