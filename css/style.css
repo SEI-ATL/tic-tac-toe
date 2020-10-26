@@ -1,3 +1,77 @@
-h1 {
-  color: purple;
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: black;
+  
+
 }
+
+h2 {
+  margin: 0 auto;
+  font-size: 35px;
+  margin: 10px;
+  color: whitesmoke;
+
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black
+
+}
+
+.flex-column {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+  height: 432px;
+  width: 432px;
+
+
+}
+
+.square {
+  border: 2px solid pink;
+  height: 140px;
+  width: 140px;
+  font-size: 80px;
+  color: whitesmoke;
+  text-align: center;
+
+}
+
+#reset-button {
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid whitesmoke;
+  height: 55px;
+  width: 100px;
+  margin: 10px;
+  background: crimson;
+  border-radius: 12px;
+}
+
+#board {
+  background: #0ff30f;
+
+}
+
+.square:hover {
+  cursor: pointer;
+  background-image: url(https://cdn.hipwallpaper.com/i/84/80/pREXMc.png);
+  background-position: center;
+  transition: 0.2s ease-in-out;
+}
+
+
+
