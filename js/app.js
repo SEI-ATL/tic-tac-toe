@@ -30,36 +30,55 @@
 // function insertTwo(){
 //     document.querySelector(".eachBox").innerHTML = "O"; 
 
-// switching x and 2 
+// switching x and o 
 
 var playerOne = [];
 var playerTwo = [];
 
-var clickCount = 0;
+var count = 0;
 
 function clicked(id){
 
 
-if(clickCount%2==0 && playerOne.indexOf(id)<0 && playerTwo.indexOf(id)<0 && clickCount<=9){
+if(count%2==0 && playerOne.indexOf(id)<0 && playerTwo.indexOf(id)<0 && count<=9){
 
 document.getElementById(id).innerHTML= "X";
 playerOne.push(id);
-clickCount++;
-if(winnerOne())
-clickCount = 10;
+count++;
+if(winner())
+count = 10;
   }
 
-if(clickCount%2!=0 && playerOne.indexOf(id)<0 && playerTwo.indexOf(id)<0 && clickCount<=9){
+if(count%2!=0 && playerOne.indexOf(id)<0 && playerTwo.indexOf(id)<0 && count<=9){
 
 document.getElementById(id).innerHTML= "O";
 playerTwo.push(id);
-clickCount++;
-if(winnerTwo())
-clickCount = 10;
-  }
-
-  // attempt at reset
-  function clear(){
-    return document.querySelectorAll(".eachBox").innerHTML = "";
+count++;
+if(winner())
+count = 10;
   }
 }
+
+  // attempt at reset
+//   function clear(){
+//     return document.querySelectorAll(".eachBox").innerHTML = "";
+//   }
+
+
+//need to set up winner combinations using a function that can read inputs in the ID's below maybe an array using elementbyID
+
+//box1,box2,box3
+// var winONE = ["box1","box2","box3"];
+
+// or(var i=0; i<winONE.length;+ i++){
+// //     if(document.getElementById)
+
+// }
+
+//box4,box5,box6
+//box7,box8,box9
+//box3,box5,box7
+//box1,box4,box7
+//box2,box5,box8
+//box3,box6,box9
+//box1,box5,box9
