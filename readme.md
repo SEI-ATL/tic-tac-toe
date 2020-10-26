@@ -9,10 +9,10 @@
 
 
 ### PvP
-![Imgur](https://imgur.com/urhn4bg)
+[Imgur](https://imgur.com/urhn4bg)
 
 ### PvAi
-![Imgur](https://imgur.com/0MSWJNq)
+[Imgur](https://imgur.com/0MSWJNq)
 
 ### To-Do
 
