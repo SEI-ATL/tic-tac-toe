@@ -75,3 +75,10 @@ If a player has their symbol in each of the indexes for a particular array, they
 I also need to identify where the user has clicked. That click needs to correspond to the location in the array containing the 
 current board. 
 I need to render the current board selections to the screen. 
+
+// This tripped me up to no end. Rome gave me some outstanding advice and I moved to clicks on each box rather than 
+//  on the container. 
+// document.querySelector(".box_container").addEventListener("click", function(event){
+//     return Number.parseInt(event.target.id.replace('box',''));
+//  });
+
