@@ -1,3 +1,24 @@
-h1 {
-  color: purple;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 300px;
+
+}
+
+.cell {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 100px;
+  height: 100px;
+  border: 1px solid blue ; 
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.x::before {
+  content: 'x';
+}
+.o::before {
+  content: 'o';
 }
