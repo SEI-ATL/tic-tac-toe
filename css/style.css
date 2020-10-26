@@ -1,3 +1,23 @@
-h1 {
-  color: purple;
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 500px;
+  height: 500px;
+}
+.cell {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+.PlayerX {
+  background-image: url("https://lh3.googleusercontent.com/k5hOGsr9YgRyEjhB7Cc8w-kd_xm3GCBHsiOp5bAJX3ClwiVjgDvuJ1K9hTxznz7EpSZeI7drkR6ZUPozi0V_yVDAxe4pcLcVpIvhw8Mpq1XD2DAV-hiYdt4Hz1CiJM484wYg6gOMBQ=s200-p-k?source=screenshot.guru");
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 1;
+}
+
+.PlayerO {
+  background-image: url("https://lh3.googleusercontent.com/5uXG7GF5uhx1_asUQbfwdOH5oCCd8vMyviPSn8cmBVc-5ic3_hIGb1Mx3nMtTztgTCODVoDXhNBjFeVmlh-UT9J9lUYHfeUtlJvniQmQ79A8ZGcRZDzX1VeOR9LHyWL-Zom0-toKrA=s200-p-k?source=screenshot.guru");
+  z-index: 1;
 }
