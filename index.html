@@ -3,12 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Front-End</title>
+  <title>Tic Tac Toe</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <h1>Hello Front-End</h1>
+  <h1>Tic Tac Toe</h1>
 
+  <div class="boardGame">
+    <div class="playArea">
+      <div id="topLeft" class="block"></div>
+      <div id="topMiddle" class="block"></div>
+      <div id="topRight" class="block"></div>
+      <div id="middleLeft" class="block"></div>
+      <div id="center" class="block"></div>
+      <div id="middleRight" class="block"></div>
+      <div id="bottomLeft" class="block"></div>
+      <div id="bottomMiddle" class="block"></div>
+      <div id="bottomRight" class="block"></div>
+    </div>
+  </div>
+
+  <button class="reset">Restart Game</button>
+  
   <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
