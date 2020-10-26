@@ -1,3 +1,35 @@
-h1 {
-  color: purple;
+body{
+  text-align: center;
+}
+
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 610px;
+  height: 610px;
+  background-color: black;
+  margin: auto;
+}
+
+.grid div {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+
+.playerX {
+  background-image: url('https://img.icons8.com/plasticine/2x/delete-sign.png');
+}
+
+.playerO {
+  background-image: url('https://i5.walmartimages.com/asr/3e47b64b-4c6e-4637-add9-8f8c517ec2a0_1.e5476fcc562e4aa13a4e44c1e52f182e.jpeg?odnHeight=200&odnWidth=200&odnBg=ffffff');
+}
+
+.grid:hover{
+  color: lightgray;
 }
