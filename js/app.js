@@ -23,11 +23,19 @@ bottomLeft.addEventListener("click", )
 bottomMiddle.addEventListener("click", )
 bottomRight.addEventListener("click", )
 
+// assign players
 
-function makeMove() {
-
+function playerOne(move) {
+    const assign = move;
+    assignment.classList.add('playerOne')
 }
 
+function playerTwo(move) {
+    const assign = move;
+    assignment.classList.add('playerTwo')
+}
+
+// 
 
 
 // testing to grab an element
