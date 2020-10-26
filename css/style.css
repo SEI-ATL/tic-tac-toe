@@ -3,8 +3,9 @@ body{
 }
 
 h1 {
-  margin: 50px auto;
+  margin: 0 auto 25px auto;
   max-width: 700px;
+  font-family: 'Permanent Marker', cursive;
   font-size: 60px;
   text-align: center;
 }
@@ -19,32 +20,84 @@ h1 {
   height: 900px;
 }
 
-.top {
+#top-left {
   border: 10px solid black;
   text-align: center;
   font-size: 350px;
-  line-height: 275px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
 }
-
-.mid {
+#top-mid {
   border: 10px solid black;
   text-align: center;
   font-size: 350px;
-  line-height: 275px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
 }
-
-.bot {
+#top-right {
   border: 10px solid black;
   text-align: center;
   font-size: 350px;
-  line-height: 275px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
+}
+#mid-left {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
+}
+#mid-mid {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
+}
+#mid-right {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
+}
+#bot-left {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
+}
+#bot-mid {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
+}
+#bot-right {
+  border: 10px solid black;
+  text-align: center;
+  font-size: 350px;
+  line-height: 250px;
+  font-family: 'Permanent Marker', cursive;
 }
 
 #reset {
   max-width: 400px;
-  margin: 100px auto;
+  margin: 25px auto;
   text-align: center;
   background-color: lightgray;
   font-size: 50px;
   border: 5px solid darkgray;
+  font-family: 'Permanent Marker', cursive;
+}
+
+h2 {
+  margin: 0 auto 25px auto;
+  max-width: 700px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 45px;
+  text-align: center;
 }
