@@ -29,11 +29,6 @@ Basic Tic-Tac-Toe. Get 3 in a row. Go. 🎰
 ### PvAi
 ![alt text](https://github.com/ruvvet/tic-tac-toe/blob/main/img/ttt-pve.gif)
 
-### To-Do
-
-- [ ] Add hard-mode PvAI w/ max-min algorithm
-- [ ] Highlight winning lines
-
 # Code snippets
 ### How information is parsed and passed from the board to the page.
 Creating the board in HTML. Initializing players and internal game-state board in JS.
@@ -73,7 +68,7 @@ let players = [
 <button class="space" id="22"></button>
 </div>
 ```
-
+### How we activate actions from the page to the internal code
 All buttons share the same class, which we take advantage of with a loop to execute the update function.
 
 ```javascript
@@ -101,7 +96,9 @@ const updateSpace = (space) => {
     let y = location[1];
     //...
 ```
-Checking for a winner. Calls the check winner function each time a move is made. If there's no winner and the board is full, it's a Tie.
+### How we control game flow + logic.
+Check if board space is null (then the move is valid) >> If valid, print to the page and update the game-state array.
+
 ```javascript
 // if board space in array is empty, the move is valid
 if (!board[x][y]) {
@@ -113,20 +110,8 @@ if (!board[x][y]) {
     // call update board function with locations
     board[x][y] = currentPlayer['player'];
 
-    // check if there is a winner
-    // if check returns true, and there is a winner
-    // clear the div
-    // print the winner
-    // change to new game
-    if (checkWinner()==true) {
-        document.querySelector('.one').innerHTML = currentPlayer['mark'] + ' WINS';
-    } else if (checkWinner() == 'Tie') {
-        // if checkwinner returns a tie
-        // new game
-        document.querySelector('.one').innerHTML = "TIE";
-    }
-    //...
 ```
+### How we control game flow.
 Toggling the player back and forth between moves.
 
 ```javascript
@@ -135,6 +120,7 @@ Toggling the player back and forth between moves.
     currentPlayer = (currentPlayer == players[0] ? players[1] : players[0]);
 
 ```
+### How we find a winner.
 Checking for a winner.
 ```javascript
 // loop through each element in combos (rows + col + diagonals)
