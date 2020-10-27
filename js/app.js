@@ -50,6 +50,7 @@ const handleClick = (e) => {
     e.target.textContent = currentPlayer
     addPlayerChoice(boardStatus, e.target.id, currentPlayer)
     currentPlayer = updateCurrentPlayer(currentPlayer)
+    e.target.classList.add(currentPlayer === 'X' ? 'player1' : 'player2')
   }
 
   if (!!checkForWinner(boardStatus) && checkForWinner(boardStatus) !== 'draw') {
