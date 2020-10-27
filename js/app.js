@@ -29,6 +29,13 @@ const addPlayerChoice = (board, choice, player) => {
 }
 
 const checkForWinner = (board) => {
+  const isBoardFull = board.reduce((iterator, cell) => {
+    if (cell) iterator++;
+    return iterator;
+  }, 0)
+
+  if (isBoardFull === 9) return 'draw'
+
   for (let i = 0; i < winningChoices.length; i++) {
     const [a, b, c] = winningChoices[i];
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
@@ -39,14 +46,20 @@ const checkForWinner = (board) => {
 }
 
 const handleClick = (e) => {
-  e.target.textContent = currentPlayer
-  console.log(e.target.id)
-  addPlayerChoice(boardStatus, e.target.id, currentPlayer)
-  currentPlayer = updateCurrentPlayer(currentPlayer)
-  if (!!checkForWinner(boardStatus)) {
+  if (!boardStatus[e.target.id]) {
+    e.target.textContent = currentPlayer
+    addPlayerChoice(boardStatus, e.target.id, currentPlayer)
+    currentPlayer = updateCurrentPlayer(currentPlayer)
+  }
+
+  if (!!checkForWinner(boardStatus) && checkForWinner(boardStatus) !== 'draw') {
     gameStatusElement.textContent = `${checkForWinner(boardStatus)} wins.`
+    boardElement.removeEventListener('click', handleClick)
+  } else if (checkForWinner(boardStatus) === 'draw') {
+    gameStatusElement.textContent = `Draw.`
     boardElement.removeEventListener('click', handleClick)
   }
 }
+
 
 boardElement.addEventListener('click', handleClick)
