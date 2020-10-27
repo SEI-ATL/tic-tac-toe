@@ -59,6 +59,8 @@ count = 10;
   }
 }
 
+
+
   // attempt at reset
 //   function clear(){
 //     return document.querySelectorAll(".eachBox").innerHTML = "";
