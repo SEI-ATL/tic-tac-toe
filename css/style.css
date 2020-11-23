@@ -1,3 +1,30 @@
 h1 {
-  color: purple;
+  color: red;
+  text-align: center;
+}
+
+div {
+  justify-items: center;
+}
+button {
+  height: 60px;
+  width: 100px;
+  justify-items: center;
+  color: black;
+  display: block;
+  margin: 0 auto;
+}
+.game-box {
+  display: grid;
+  grid-template-rows: 150px 150px 150px;
+  grid-template-columns: 150px 150px 150px;  
+}
+.square {
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  font-weight: bolder;
+  border: 5px blueviolet solid;
 }
